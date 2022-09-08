@@ -9,27 +9,29 @@ public class PessoaController : ControllerBase{
 
   [HttpGet]
   public Pessoa ListPessoa() {
-    Pessoa pessoa = new Pessoa("Richard", 25, "12546589765");
-    Contrato NewContrato = new Contrato("123456", 153.67);
-    pessoa.Contratos.Add(NewContrato);
-    return pessoa;
+    Pessoa Pessoa = new Pessoa("Richard", 25, "12546589765");
+    Contrato NovoContrato = new Contrato("123456", 153.67);
+
+    Pessoa.Contratos.Add(NovoContrato);
+
+    return Pessoa;
   }
 
   [HttpPost]
-  public Pessoa InsertPessoa(Pessoa pessoa) {
-    return pessoa;
+  public Pessoa InsertPessoa(Pessoa Pessoa) {
+    return Pessoa;
   }
 
-  [HttpPut("{id}")]
-  public string UpdatePessoa(int id, Pessoa Pessoa) {
-    Console.WriteLine(id);
+  [HttpPut("{Id}")]
+  public string UpdatePessoa(int Id, Pessoa Pessoa) {
+    Console.WriteLine(Id);
     Console.WriteLine(Pessoa);
-    return "Dados do id " + id + " atualizados!";
+    return "Dados do Id " + Id + " atualizados!";
   } 
 
-  [HttpDelete("{id}")]
-  public string DeletePerson(int id) {
-    return "Dados do id " + id + " deletado com sucesso!";
+  [HttpDelete("{Id}")]
+  public string DeletePerson(int Id) {
+    return "Dados do Id " + Id + " deletado com sucesso!";
   }
 
 }

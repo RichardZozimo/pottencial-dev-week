@@ -1,6 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using src.Persistence;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder
+    .Services
+    .AddDbContext<DatabaseContext>(options => options.UseInMemoryDatabase("dbContracts"));
+    // em caso de uso de outra base de dados basta alterar o metodo de options 
+    // e inserir a connection string como parametro
+    // options.UseSqlServer("connectionString")
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -11,9 +11,12 @@ public class Pessoa
     this.Ativo = true;
     this.Contratos = new List<Contrato>();
   }
+
+  public int Id { get; set; }
   public string Nome { get; set; }
   public int Idade  { get; set; }
   public string Cpf  { get; set; }
   public bool Ativo  { get; set; }
   public List<Contrato> Contratos { get; set; }
+  
 }
