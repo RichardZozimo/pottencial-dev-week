@@ -4,12 +4,19 @@ namespace src.Models;
 
 public class Pessoa
 {
+  public Pessoa() {
+    this.Nome = "template";
+    this.Idade = 0;
+    this.Contratos = new List<Contrato>();
+    this.Ativo = true;
+  }
+
   public Pessoa(string Nome, int Idade, string Cpf) {
     this.Nome = Nome;
     this.Idade = Idade;
     this.Cpf = Cpf;
-    this.Ativo = true;
     this.Contratos = new List<Contrato>();
+    this.Ativo = true;
   }
 
   public int Id { get; set; }
